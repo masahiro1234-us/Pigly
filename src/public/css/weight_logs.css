@@ -1,0 +1,366 @@
+:root{
+  --bg:#f9f9f9; --card:#fff; --text:#333; --muted:#919191;
+  --line:#E0DFDE; --divider:#EDEDED;
+  --accent-1:#A3A6E1; --accent-2:#FFABD9;
+  --brand:#C978D9;
+}
+
+*{ box-sizing:border-box; }
+
+html,body{
+  margin:0; padding:0; color:var(--text); background:#F9F9F9;
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;
+}
+
+/* ===================== フル幅トップバー ===================== */
+.wl-topnav{
+  height:71px;
+  border-bottom:1px solid #CDCDCD;
+  background:#fff;
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  display:flex; align-items:center;
+}
+.wl-topnav__inner{
+  max-width:1120px; width:100%;
+  margin:0 auto; padding:10px 20px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.wl-brand{ font-size:36px; line-height:1; letter-spacing:.02em; color:var(--brand); font-family:"Lora",serif; }
+.wl-actions{ display:flex; gap:10px; }
+.wl-btn{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:0 14px; height:36px; border-radius:6px;
+  border:1px solid var(--line); background:#fff; color:var(--text);
+  text-decoration:none; font-size:14px;
+}
+.wl-btn--ghost:hover{ background:#fafafa; }
+.wl-btn__icon{ font-size:14px; }
+
+/* ===================== コンテナ ===================== */
+.wl-container{ max-width:1120px; margin:24px auto 80px; padding:0 16px; }
+
+/* ===================== ステータス ===================== */
+.wl-stats{
+  display:grid; grid-template-columns:1fr 1px 1fr 1px 1fr;
+  align-items:stretch; background:#fff; border:1px solid var(--divider);
+  border-radius:10px; padding:30px; gap:30px;
+}
+.wl-divider{ width:1px; background:var(--divider); }
+.wl-stat{ display:flex; flex-direction:column; justify-content:center; gap:8px; }
+.wl-stat__label{ font-size:14px; color:#666; font-weight:300; margin:0; }
+.wl-stat__value{ font-size:40px; font-weight:600; line-height:1; }
+.wl-stat__value span{ font-size:16px; font-weight:300; margin-left:6px; }
+
+/* ===================== 検索＋結果カード ===================== */
+.wl-card{
+  background:#fff; border:1px solid var(--divider);
+  border-radius:10px; margin-top:30px; padding:30px;
+}
+.wl-card--results{ display:grid; gap:10px; padding:20px 24px; }
+.wl-card__filters{ display:flex; align-items:center; justify-content:space-between; }
+.wl-card__filter-left{ display:flex; align-items:center; gap:10px; }
+
+/* 日付入力 */
+.wl-input{
+  display:flex; align-items:center; background:#fff; border:1px solid var(--line);
+  border-radius:5px; height:43px; padding:0 12px;
+}
+.wl-input input{
+  border:none; outline:none; background:transparent; height:38px; font-size:14px; min-width:200px;
+}
+.wl-tilde{ color:#bbb; margin:0 4px; }
+
+/* 検索・リセット（100×43固定） */
+.wl-btn--search,
+.wl-btn--reset{
+  width:100px; height:43px; border-radius:5px; font-size:14px;
+  display:inline-flex; align-items:center; justify-content:center; padding:0;
+}
+.wl-btn--search{ background:#919191; border:1px solid #919191; color:#fff; }
+.wl-btn--reset { background:#fff; border:1px solid #919191; color:#919191; }
+.wl-btn--reset:hover{ background:#fafafa; }
+
+/* 追加ボタン */
+.wl-btn--add{
+  height:45px; border-radius:12px; border:0; color:#fff; padding:0 18px; font-weight:600;
+  background:linear-gradient(90deg,var(--accent-1),var(--accent-2));
+  box-shadow:0 2px 10px rgba(163,166,225,.25);
+}
+
+/* 検索範囲＋件数 */
+.wl-search-info{ margin-top:4px; font-size:14px; color:#333; font-weight:300; }
+
+/* ===================== 一覧テーブル（ベース） ===================== */
+.wl-table{ width:100%; }
+.wl-thead,.wl-row{
+  display:grid; grid-template-columns:1fr 120px 180px 120px 40px; align-items:center;
+}
+.wl-thead{ padding:0 0 8px; border-bottom:1px solid var(--divider); }
+.wl-th{ font-size:16px; font-weight:600; color:#333; text-align:left; }
+.wl-row{ min-height:60px; border-bottom:1px dashed var(--divider); }
+.wl-row:last-child{ border-bottom:none; }
+.wl-td{ padding:14px 0; font-size:14px; }
+.w-time{ font-variant-numeric:tabular-nums; }
+.w-edit{ justify-self:end; }
+
+/* ペンシル */
+.wl-pencil{ display:inline-flex; }
+.wl-pencil__svg{ width:20px; height:20px; display:block; }
+
+/* 空状態 */
+.wl-empty{ padding:22px 0; color:#777; }
+
+/* ===================== レスポンシブ（共通） ===================== */
+@media (max-width:960px){
+  .wl-container{ padding:0 12px; }
+  .wl-stats{ grid-template-columns:1fr; gap:16px; }
+  .wl-divider{ display:none; }
+  .wl-thead,.wl-row{ grid-template-columns:1.2fr .8fr 1fr .8fr 32px; }
+}
+@media (max-width:680px){
+  .wl-card__filter-left{ flex-wrap:wrap; row-gap:8px; }
+}
+
+/* ===================== 目標体重設定 ===================== */
+.goal-wrap{
+  display:flex; justify-content:center; align-items:flex-start;
+  min-height:calc(100vh - 120px);
+}
+.goal-card{
+  width:470px; background:#fff; border:1px solid var(--line); border-radius:10px;
+  padding:30px 20px; margin-top:120px;
+}
+.goal-title{
+  margin:0 0 20px; text-align:center; font-size:30px; font-weight:600; color:#333;
+}
+.goal-input-row{ width:100%; display:flex; align-items:center; gap:8px; }
+.goal-input{
+  width:400px; height:43px; border:1px solid var(--line); border-radius:5px;
+  padding:0 12px; font-size:14px; background:#fff; outline:none;
+}
+.goal-kg{ height:43px; display:flex; align-items:center; font-size:16px; color:#333; }
+.goal-actions{
+  margin-top:14px; display:flex; justify-content:center; align-items:center; gap:10px;
+}
+.goal-actions > *{
+  width:200px; height:50px; border-radius:12px; display:flex; align-items:center; justify-content:center;
+  font-weight:600; font-size:16px; text-decoration:none; box-shadow:0 0 10px rgba(0,0,0,.10);
+}
+.goal-actions > *:first-child{ background:#F7F7F7; color:#333; border:1px solid #E0DFDE; }
+.goal-actions > *:last-child { border:0; color:#fff; background:linear-gradient(90deg, var(--accent-1), var(--accent-2)); }
+.goal-error{ margin-top:6px; color:#d33; font-size:13px; }
+
+/* ===================== フォーム共通（create/edit） ===================== */
+.wl-form label{ display:block; font-weight:600; color:#333; margin:8px 0 6px; }
+.wl-input__field{
+  width:100%; height:43px; border:1px solid var(--line); border-radius:5px;
+  padding:0 12px; background:#fff; font-size:14px; outline:none;
+}
+.wl-input-with-unit{ display:flex; align-items:center; gap:8px; }
+.wl-unit{ font-size:14px; color:#333; }
+.wl-error{ color:#d33; font-size:13px; margin-top:4px; }
+
+/* 危険ボタン（任意） */
+.wl-btn--danger{ border:1px solid #e06b6b; color:#e06b6b; background:#fff; }
+.wl-btn--danger:hover{ background:#fff5f5; }
+
+/* ===================== Create モーダル（ベース） ===================== */
+.wl-modal{
+  position:fixed; inset:0; z-index:1000;
+  display:flex; align-items:flex-start; justify-content:center;
+  padding:70px 20px; opacity:0; pointer-events:none; transition:opacity .18s ease;
+}
+.wl-modal.is-open{ opacity:1; pointer-events:auto; }
+.wl-modal__backdrop{
+  position:absolute; inset:0; background:rgba(51,51,51,.5);
+  backdrop-filter:saturate(120%) blur(2px);
+}
+.wl-modal__card{
+  position:relative; width:min(760px,92vw); background:#fff; border:1px solid var(--line);
+  border-radius:10px; padding:24px; box-shadow:0 10px 24px rgba(0,0,0,.12);
+  max-height:calc(100vh - 140px); overflow:auto;
+}
+.wl-modal__title{ margin:0 0 14px; font-size:20px; font-weight:700; color:#333; }
+.wl-modal__body{ display:grid; gap:10px; }
+
+.wl-field label{
+  display:inline-flex; align-items:center; gap:8px; font-weight:600; color:#333; margin:0 0 6px;
+}
+.wl-req{
+  display:inline-block; font-size:12px; line-height:1; color:#fff; background:#E25;
+  border-radius:4px; padding:1px 6px;
+}
+
+.wl-modal .wl-input__field{ height:43px; border:1px solid var(--line); border-radius:5px; padding:11px 10px; }
+.wl-modal textarea.wl-input__field{ height:160px; padding:10px 12px; resize:vertical; }
+.wl-modal .wl-input-with-unit{ display:grid; grid-template-columns:1fr auto; align-items:center; gap:8px; }
+.wl-modal .wl-unit{ font-size:16px; color:#333; }
+
+.wl-modal .wl-btn--ghost{
+  width:200px; height:50px; border:1px solid #E0DFDE; border-radius:12px;
+  background:#F7F7F7; color:#333; font-weight:600; box-shadow:0 0 10px rgba(0,0,0,.10);
+}
+.wl-modal .wl-btn--add{
+  width:200px; height:50px; border:0; border-radius:12px; color:#fff; font-weight:600;
+  background:linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  box-shadow:0 0 10px rgba(0,0,0,.10);
+}
+
+.wl-modal .wl-error{ color:#d33; font-size:12px; margin-top:4px; }
+
+@media (max-height: 720px){
+  .wl-modal{ padding:40px 16px; }
+  .wl-modal__card{ max-height:calc(100vh - 80px); padding:20px; }
+}
+
+/* ===================== 詳細（編集）カード ===================== */
+.wl-edit-card{
+  width:min(760px, 92vw); background:#fff;
+  border:1px solid var(--line); border-radius:10px;
+  padding:30px; margin:30px auto;
+  display:flex; flex-direction:column; gap:10px;
+}
+.wl-form-title{
+  font-size:24px; font-weight:600; color:#333; margin:0 0 10px;
+}
+
+/* 編集カード内のプレースホルダー／入力色 */
+#wl-edit .wl-input__field::placeholder { color:#CDCDCD; }
+#wl-edit .wl-input__field.is-empty { color:#CDCDCD; }
+#wl-edit .wl-input__field:not(.is-empty) { color:var(--text); }
+
+/* テキストエリア高さ（create / edit 共通） */
+.wl-form textarea.wl-input__field{ height:160px; padding:10px 12px; resize:vertical; }
+
+/* 共通のゴミ箱ボタン見た目 */
+.wl-btn--trash{
+  background:transparent; border:0; padding:0; cursor:pointer;
+  width:44px; height:44px;
+  display:inline-flex; align-items:center; justify-content:center;
+}
+.wl-btn--trash svg{ width:21px; height:24px; display:block; }
+
+/* ===================== Edit page only (scoped) ===================== */
+#wl-edit textarea.wl-input__field{ min-height:160px; }
+
+/* アクション行：中央に「戻る・更新」／右端に「削除」 */
+#wl-edit-actions{
+  position:relative; display:flex; justify-content:center;
+  gap:10px; margin-top:14px; padding-right:56px; /* 右のゴミ箱ぶん逃がす */
+}
+#wl-edit-actions .wl-actions-center{ display:flex; gap:10px; align-items:center; }
+#wl-edit-actions .wl-btn{
+  width:200px; height:50px; border-radius:12px; font-weight:600;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 0 10px rgba(0,0,0,.10);
+}
+#wl-edit-actions .wl-btn.wl-btn--ghost{
+  background:#F7F7F7; border:1px solid #E0DFDE; color:#333;
+}
+#wl-edit-actions .wl-btn.wl-btn--add{
+  border:0; color:#fff; background:linear-gradient(90deg, var(--accent-1), var(--accent-2));
+}
+
+/* 右端の削除アイコン：縦中央＆右固定（はみ出し防止） */
+#wl-edit-trash{
+  position:absolute; right:0; top:50%; transform:translateY(-50%);
+  display:flex; align-items:center;
+}
+#wl-edit-trash .wl-btn--trash{
+  width:44px; height:44px; padding:0; border:0; background:transparent; cursor:pointer;
+  display:inline-flex; align-items:center; justify-content:center;
+}
+@media (max-width: 600px){
+  #wl-edit-actions{ padding-right:0; flex-wrap:wrap; }
+  #wl-edit-trash{ position:static; transform:none; margin-left:auto; }
+}
+
+/* ===================== Create モーダルのボタン中央寄せ ===================== */
+.wl-modal .wl-modal__actions{
+  display:flex; justify-content:center; align-items:center;
+  gap:10px; width:100%; margin-top:20px;
+}
+.wl-modal .wl-modal__actions .wl-btn{
+  width:200px; height:50px; border-radius:12px; font-weight:600;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 0 10px rgba(0,0,0,.10);
+}
+
+/* ===== /weight_logs 一覧カードだけ（#wl-index スコープ） ===== */
+
+/* PCは見本通りの横幅で固定（1120 - 両側30px = 1060px） */
+@media (min-width:1140px){
+  #wl-index .wl-table{ width:1060px; margin:0 auto; }
+}
+
+/* 行と列幅（見本：300 / 200 / 260 / 200 / 100、行高60） */
+#wl-index .wl-thead,
+#wl-index .wl-row{
+  grid-template-columns:300px 200px 260px 200px 100px;
+  min-height:60px;
+}
+
+/* グリッド内の子要素が列幅を押し広げないように */
+#wl-index .wl-thead > *, #wl-index .wl-row > *{ min-width:0; }
+
+/* 数字は等幅表示 */
+#wl-index .w-date{ font-variant-numeric:tabular-nums; }
+
+/* 編集列：100pxの中で中央寄せ（基底の justify-self:end を上書き） */
+#wl-index .w-edit{
+  justify-self:stretch;
+  display:flex; align-items:center; justify-content:center;
+}
+#wl-index .wl-pencil__svg{ width:20px; height:20px; }
+
+/* 行の区切り線は見本の #F7F7F7 */
+#wl-index .wl-row{ border-bottom:1px solid #F7F7F7; }
+#wl-index .wl-row:last-child{ border-bottom:none; }
+
+/* ===== ページネーション（数字だけ＋アクティブはグラデ） ===== */
+#wl-index .wl-pagination{ display:flex; justify-content:center; padding-top:14px; }
+#wl-index .wl-pagination ul{
+  list-style:none; margin:0; padding:0;
+  display:flex; align-items:center; gap:12px; /* 数字の間隔 */
+}
+#wl-index .wl-pagination li{ margin:0; }
+
+/* 非アクティブ：数字だけ（枠なし） */
+#wl-index .wl-pagination li > a,
+#wl-index .wl-pagination li > span,
+#wl-index .wl-pagination li > button{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:31px; height:30px; padding:0 6px;
+  border:0; border-radius:8px;
+  background:transparent; color:#333; text-decoration:none;
+  line-height:1; font-size:14px; box-shadow:none;
+}
+#wl-index .wl-pagination li > a:hover{ background:#f7f7f7; }
+
+/* 無効（Prev/Nextが押せない時） */
+#wl-index .wl-pagination [aria-disabled="true"],
+#wl-index .wl-pagination .cursor-default{
+  opacity:.45; pointer-events:none;
+}
+
+/* アクティブ：枠線なし・グラデ pill（Tailwindのラッパにも対応） */
+#wl-index .wl-pagination [aria-current="page"],
+#wl-index .wl-pagination [aria-current="page"] > *,
+#wl-index .wl-pagination .z-10,
+#wl-index .wl-pagination .z-10 > *{
+  background:linear-gradient(90deg,var(--accent-1),var(--accent-2));
+  color:#fff;
+  border:0;
+  box-shadow:none; /* ring 対策 */
+  outline:0;
+}
+
+/* スマホ幅は列幅だけ少し狭める（ページネーションはそのまま） */
+@media (max-width:680px){
+  #wl-index .wl-thead,
+  #wl-index .wl-row{
+    grid-template-columns:140px 100px 1fr 100px 80px;
+  }
+}

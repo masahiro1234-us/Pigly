@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+.register-bg {
+    background-image: url('/images/register.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-wrapper {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* PiGLyロゴ */
+.logo {
+    font-family: 'Lora', serif;
+    font-size: 60px;
+    font-weight: 400;
+    color: #EC87EF;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* 新規会員登録（見出し） */
+.heading {
+    font-family: 'Hiragino Mincho Pro', serif;
+    font-size: 30px;
+    font-weight: 300;
+    color: #333333;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+/* STEP1 説明文 */
+.step-text {
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #333333;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-wrapper {
+    margin-top: 20px;
+}
+
+.next-btn {
+    background: linear-gradient(to right, #e8c4f4, #f9b5d0);
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.login-link {
+    margin-top: 20px;
+}
+
+.login-link a {
+    color: #2C99FF;
+    font-family: "Hiragino Mincho Pro", serif;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+input::placeholder,
+select::placeholder {
+    color: #CDCDCD;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.error-message {
+    width: 500px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1;
+    color: #f65a5a;
+    margin-top: 2px;
+}

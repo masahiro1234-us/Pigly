@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/register.jpg');
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+.register-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-box {
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 500px;
+    text-align: center;
+}
+
+.logo {
+    font-family: 'Lora', serif;
+    font-size: 60px;
+    color: #EC87EF;
+    letter-spacing: 0.1em;
+    line-height: 100%;
+    margin: 0;
+}
+
+.register-title {
+    font-family: "Hiragino Mincho Pro", serif;
+    font-weight: 300;
+    font-size: 30px;
+    color: #333333;
+    letter-spacing: 0.1em;
+    line-height: 100%;
+    margin: 10px 0;
+}
+
+.step-info {
+    font-size: 16px;
+    color: #333;
+    line-height: 100%;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600; /* ← W6 */
+    font-size: 16px;
+    line-height: 100%;
+    color: #333333;
+    margin-bottom: 8px;
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+.input-with-unit {
+    display: flex;
+    align-items: center;
+    height: 77px;
+}
+
+.input-with-unit input {
+    flex: 1;
+    height: 43px;
+    padding: 0 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.unit {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.submit-btn {
+    background: linear-gradient(to right, #A3A6E1, #FFABD9);
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    width: 250px;
+    height: 50px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* バリデーションメッセージ用 */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 4px;
+}
