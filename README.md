@@ -24,3 +24,8 @@
   - Step1: http://localhost/register/step1
   - Step2: http://localhost/register/step2
 - 体重管理画面ページ: http://localhost/weight_logs
+
+## テストアカウント
+- メールアドレス: test@example.com
+- パスワード: password123
+- ログイン後、体重管理画面でファクトリの仮データが確認できます
