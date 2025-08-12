@@ -16,7 +16,7 @@
 - Docker
 
 ## ER図
-![ER図](public/images/er-diagram.png)
+![ER図](src/public/images/er-diagram.png)
 
 ## URL
 - ログインページ: http://localhost/login
